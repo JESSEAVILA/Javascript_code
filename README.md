@@ -1,45 +1,23 @@
 /*This Web Site wasa created only for test... And my plan that's improve...
  *  But I knowing that this helpfully many persons!*/
 
-var dd, mm, yyyy, year; 
+var dd, mm, yyyy, year, today; 
 var birthday;
 var age, currentYear;
 var dontAllowed = 0, allowed = 0, right = 0, wrong = 0;
 var indeed = false, pass = false;
 var stats1, stats2;
 
-year = parseInt(2019);
+today = new Date();
+year = today.getFullYear();
+
 
 while (indeed === false){
     birthday = prompt ("What's your birthday date?");
-    
+
     dd = parseInt(birthday / 1000000);
     mm = parseInt((birthday % 1000000) / 10000);
     yyyy = (birthday % 10000);    
-
-    while (pass === false){
-        currentYear = prompt ("Which year are you in?");
-        
-        
-        if (currentYear != year){
-            
-            alert ("Current year incorrect");
-        
-        }else{
-            wrong = (wrong + 1);
-        }
-        
-        if (currentYear == year){
-            alert("Correct year, go ahead!");
-                       
-            right = (right + 1);
-            
-            if (right === 1){
-                
-               pass = true;
-            }
-        } 
-    }
 
     if (mm === 01){
         mm = ("January");
@@ -67,7 +45,7 @@ while (indeed === false){
         mm = ("December");
     }
     
-    age = (currentYear - yyyy);
+    age = (year - yyyy);
     
     stats1 = ("Your birthday is: " + mm + "/ " + dd + "/ " + yyyy + " your age is: " + age + " old! With this, you aren't allowed to access this web page!");
     stats2 = ("Your birthday is: " + mm + "/ " + dd + "/ " + yyyy + " your age is: " + age + " old! With this, you're allowed to access this web page!");
